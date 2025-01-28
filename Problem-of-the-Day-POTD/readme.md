@@ -6,7 +6,7 @@
 
 
 
-- **[Problem: 2568(28/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2568.txt)**
+- **[Problem: 2568(28/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2658.txt)**
 
 
 ---
