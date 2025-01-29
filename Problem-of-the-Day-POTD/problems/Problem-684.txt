@@ -1,0 +1,41 @@
+# Code
+```cpp []
+class Solution {
+public:
+    bool dfs(int u,int v,unordered_map<int,vector<int>>&adj, vector<bool>& visited)
+    {
+        visited[u]=true;
+        if(u==v)
+        return true;
+        for (int &adds:adj[u])
+        {
+            if (visited[adds]) continue;
+            
+            if(dfs(adds,v,adj,visited))
+            return true;
+        }
+        return false;
+    }
+
+
+    vector<int> findRedundantConnection(vector<vector<int>>& edges) {
+        int n=edges.size(); // means the no of rows
+        // cout<<u<<" "<<v;
+        unordered_map<int,vector<int>> adj; // to store the graph like it will store node 1 as key in int and node 1 connected to 2 and 3 , so 2 and 3 will in vector<int>
+
+       
+        for (int i=0;i<n;i++)
+        {
+            int u=edges[i][0]; //means the 1st node in the 2d array [i,..]
+            int v=edges[i][1]; //means the 1st node in the 2d array [..,i]
+            // vector<bool> visited(n,false);
+            vector<bool> visited(n, false);
+            if(adj.find(u)!=adj.end() && adj.find(v)!=adj.end() && dfs(u,v,adj,visited))
+            return edges[i];
+            adj[u].push_back(v);
+            adj[v].push_back(u); //created the graph 
+        }
+        return{};
+    }
+};
+```
