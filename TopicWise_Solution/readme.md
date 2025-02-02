@@ -9,6 +9,7 @@
 
 
 - **[Problem: 26](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-26.txt)**
+- **[Problem: 69](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-69.txt)**
 
 
 
