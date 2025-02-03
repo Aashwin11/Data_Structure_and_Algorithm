@@ -12,6 +12,8 @@
 - **[Problem: 827(31/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-827.txt)**
 - **[Problem: 3151(01/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3151.txt)**
 - **[Problem: 1752(01/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1752.txt)**
+- **[Problem: 1752(01/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3105.txt)**
+
 
 
 
