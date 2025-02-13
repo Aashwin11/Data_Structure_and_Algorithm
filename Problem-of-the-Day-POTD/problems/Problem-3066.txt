@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int minOperations(vector<int>& nums, int k) {
+        
+        int n=nums.size();
+        priority_queue<long ,vector<long>,greater<long>> minHeap(begin(nums),end(nums)); // to declare min heap
+        int cnt=0;
+        while(minHeap.top()<k && !minHeap.empty())
+        {
+            long s1=minHeap.top();
+            minHeap.pop();
+            long s2=minHeap.top();
+            minHeap.pop();
+            minHeap.push(s1* 2 + s2);
+            cnt++;
+            
+        }
+        return cnt;
+    }
+};
