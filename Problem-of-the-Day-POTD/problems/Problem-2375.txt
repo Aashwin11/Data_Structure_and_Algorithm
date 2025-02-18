@@ -1,0 +1,58 @@
+APPROACH -1 :
+class Solution {
+public:
+
+    bool matchPattern(string& num, string& pattern)
+    {
+        for(int i=0;i<pattern.size();i++)
+        {
+            if(pattern[i]=='I' && num[i+1]<num[i] || pattern[i]=='D' &&num[i]<num[i+1] )
+            return false;
+        }
+
+        return true;
+    }
+    string smallestNumber(string pattern) {
+        int psize=pattern.size();
+        string num="";
+        for(int i=1;i<=psize+1;i++)
+        {
+            num.push_back(i+'0');
+        }
+
+        while(!(matchPattern(num,pattern)))
+        {
+            next_permutation(begin(num),end(num));
+        }
+        return num;
+    }
+};
+
+APPROACH-2:
+
+class Solution {
+public:
+    string smallestNumber(string pattern) {
+        int n=pattern.size();
+
+        stack<char> st;
+        string num="";
+        int counter=1;
+
+        for(int i=0;i<=n;i++)
+        {
+            st.push(counter+'0');
+            counter++;
+
+            if(i==n || pattern[i]=='I')
+            {
+                while(!(st.empty()))
+                {
+                    num+=st.top();
+                    st.pop();
+                }
+            }
+        }
+        return num;
+    }
+};
