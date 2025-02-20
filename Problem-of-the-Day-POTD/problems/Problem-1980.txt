@@ -1,0 +1,43 @@
+class Solution {
+public:
+    string solve(unordered_set<string>& st, string& curr, int n)
+    {
+
+        if(curr.size()==n)
+        {
+            return st.find(curr)==st.end()?curr:"" ;
+        } 
+
+        //try
+        curr.push_back('0');
+        //explore
+        string res=solve(st,curr,n);
+        if(!res.empty()) return res;
+
+        //undo
+        curr.pop_back();
+
+        //try
+        curr.push_back('1');
+        //explore
+        res=solve(st,curr,n);
+        if(!res.empty()) return res;
+        //undo
+        curr.pop_back();
+    return "";
+    }
+    string findDifferentBinaryString(vector<string>& nums) {
+        int n=nums.size();
+        unordered_set<string> st;
+        for(string s: nums)
+        {
+            st.insert(s);
+        }
+        string curr="";
+
+        string res=solve(st,curr,n);
+
+        return res;
+        
+    }
+};
