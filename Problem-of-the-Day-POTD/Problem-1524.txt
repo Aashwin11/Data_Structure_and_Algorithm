@@ -1,0 +1,32 @@
+class Solution {
+public:
+int M=1e9+7;
+    int numOfSubarrays(vector<int>& arr) {
+        
+        int n=arr.size();
+        int even_count=1;
+        int odd_count=0;
+
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            sum+=arr[i];
+            arr[i]=sum;
+        }
+        int res=0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]%2==0)
+            {
+                even_count++;
+                res=(res+odd_count)%M;
+            }
+            else
+            {
+                odd_count++;
+                res=(res+even_count)%M;
+            }
+        }
+        return res;
+    }
+};
