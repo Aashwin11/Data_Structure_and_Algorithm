@@ -39,7 +39,7 @@
 
 - **[Problem: 873(27/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-873.txt)**
 - **[Problem: 1092(28/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1092.txt)**
-
+- **[Problem: 2460(01/03/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2460.txt)**
 
 
 
