@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int numberOfEmployeesWhoMetTarget(vector<int>& nums, int t) {
+        int n=nums.size();
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]>=t)
+            {
+                count++;
+            }
+        }
+
+        return count;
+
+        
+    }
+};
