@@ -30,19 +30,15 @@
 - **[Problem: 1980(20/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1980.txt)**
 - **[Problem: 1291(21/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1261.txt)**
 - **[Problem: 1028(22/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1028.txt)**
-
 - **[Problem: 889(23/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-889.txt)**
-
 - **[Problem: 2467(24/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2467.txt)**
 - **[Problem: 1524(25/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1524.txt)**
 - **[Problem: 1749(26/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1749.txt)**
-
 - **[Problem: 873(27/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-873.txt)**
 - **[Problem: 1092(28/02/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1092.txt)**
 - **[Problem: 2460(01/03/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2460.txt)**
-
 - **[Problem: 2570(02/03/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2570.txt)**
-
+- **[Problem: 2161(03/03/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2161.txt)**
 
 ---
 
