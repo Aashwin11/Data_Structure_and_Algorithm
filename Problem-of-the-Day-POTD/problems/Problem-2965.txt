@@ -1,0 +1,30 @@
+class Solution {
+public:
+    vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
+
+        int n=grid.size(); //2
+
+        unordered_map<int,int> mp;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                mp[grid[i][j]]++;
+            }
+        }
+        int twice;
+        int zero;
+        for(int i=1;i<=(n*n);i++)
+        {
+            // cout<<i<<"-"<<mp[i]<<endl;
+            if(mp[i]==2) twice=i;
+            if(mp[i]==0) zero=i;
+        }
+
+        return {twice,zero};
+
+
+
+        
+    }
+};
