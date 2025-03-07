@@ -1,0 +1,42 @@
+class Solution {
+public:
+    vector<int> closestPrimes(int left, int right) {
+        vector<int> nums;
+        for(int i=left;i<=right;i++)
+        {
+            int flag=0;
+            for(int j=2;j<=sqrt(i);j++)
+            {
+                if(i%j==0)
+                {
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0)
+            {
+                nums.push_back(i);
+            }
+
+        }
+        int minres=INT_MAX;
+        int val1;
+        int val2;
+        if(nums.size()==1 || nums.size()==0) return {-1,-1};
+        if(nums.size()==2) return {nums[0],nums[1]};
+        for(int i=0;i<nums.size()-1;i++)
+        {
+            if(nums[i]==1) continue;
+            int res=nums[i+1]-nums[i];
+            if(res== minres) continue;
+            else if(res<minres){
+                minres=min(minres,res);
+                val1=nums[i];
+                val2=nums[i+1];
+
+            }
+        }
+    
+    return {val1,val2};
+    }
+};
