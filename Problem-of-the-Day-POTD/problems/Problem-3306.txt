@@ -1,0 +1,66 @@
+SLIDING WINDOW PROBLEM
+
+class Solution {
+public:
+    bool isVowel(char ch) {
+        ch = tolower(ch);
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+
+    long long countOfSubstrings(string word, int k) {
+        int n = word.size();
+        vector<int> precount(n, n); // Initialize with 'n' to avoid garbage values
+        int constLastIndex = n;
+
+        // Precompute next consonant positions
+        precount[n - 1] = n; // Ensure last index is initialized
+        for (int i = n - 1; i >= 0; i--) {
+            precount[i] = constLastIndex;
+            if (!isVowel(word[i])) {
+                constLastIndex = i;
+            }
+        }
+
+        unordered_map<char, int> mp;
+        int i = 0, j = 0;
+        long long count = 0;
+        int cc = 0; // Consonant count
+
+        while (j < n) {
+            char ch = word[j];
+
+            if (isVowel(ch)) {
+                mp[ch]++;
+            } else {
+                cc++;
+            }
+
+            // Shrink window if consonants exceed k
+            while (i < n && cc > k) {
+                char ch = word[i];
+                if (isVowel(ch)) {
+                    mp[ch]--;
+                    if (mp[ch] == 0) mp.erase(ch);
+                } else {
+                    cc--;
+                }
+                i++;
+            }
+
+            // Count valid substrings
+            while (i < n && mp.size() == 5 && cc == k) {
+                count += precount[j] - j;
+                if (isVowel(word[i])) {
+                    mp[word[i]]--;
+                    if (mp[word[i]] == 0) mp.erase(word[i]);
+                } else {
+                    cc--;
+                }
+                i++;
+            }
+            j++;
+        }
+
+        return count;
+    }
+};
