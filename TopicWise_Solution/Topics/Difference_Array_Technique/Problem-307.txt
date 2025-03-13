@@ -1,0 +1,38 @@
+class Solution {
+public:
+    /**
+     * @param length: the length of the array
+     * @param updates: update operations
+     * @return: the modified array after all k operations were executed
+     */
+     int n;
+     int q;
+    vector<int> getModifiedArray(int length, vector<vector<int>> &updates) {
+        // Write your code here
+        n=length;
+        q=updates.size();
+
+        vector<int> diff(n,0);
+
+        for(int i=0;i<q;i++)
+        {
+            int l=updates[i][0];
+            int r=updates[i][1];
+            int x=updates[i][2];
+
+            diff[l]+=x;
+            if((r+1)<n)
+            {
+                diff[r+1]-=x;
+            }
+
+        }
+        int cummSum=0;
+        for(int i=0;i<n;i++)
+        {
+            cummSum+=diff[i];
+            diff[i]=cummSum;
+        }
+        return diff;
+    }
+};
