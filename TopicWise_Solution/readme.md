@@ -15,7 +15,10 @@
 
 
 <h3 align="left">Difference Array Technique:</h3>
-- **[Problem:307](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-26.txt)**
+
+
+- **[Problem: 307](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Difference_Array_Technique/Problem-307.txt)**
+
 
 
 
