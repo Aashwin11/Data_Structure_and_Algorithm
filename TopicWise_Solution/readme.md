@@ -14,6 +14,13 @@
 - **[Problem: 977](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-977.txt)**
 
 
+<h3 align="left">Difference Array Technique:</h3>
+- **[Problem:307](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-26.txt)**
+
+
+
+
+
 
 ---
 
