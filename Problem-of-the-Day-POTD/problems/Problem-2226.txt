@@ -1,0 +1,37 @@
+//Binary Search
+
+class Solution {
+public:
+    int maximumCandies(vector<int>& candies, long long k) {
+        
+        if(k==0) return 0;
+        int n=candies.size();
+        int low=1;
+        int high=*max_element(candies.begin(),candies.end());
+        cout<<high<<endl;
+        int result=0;
+        while(low<=high)
+        {
+            int mid=low+(high-low)/2;
+            long long count=0; 
+
+            for(int i=0;i<n;i++)
+            {
+                count+=candies[i]/mid;
+            }
+
+            if(count>=k)
+            {
+                result=mid;
+                low=mid+1;
+            }
+            else 
+            {
+                high=mid-1;
+            }
+        }
+
+        return result;
+        
+    }
+};
