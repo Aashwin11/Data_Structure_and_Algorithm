@@ -1,0 +1,22 @@
+//Sliding windown+ bit manipulation
+
+class Solution {
+public:
+    int longestNiceSubarray(vector<int>& nums) {
+        int left = 0, right = 0;
+        int maxLength = 1, bitmask = 0;
+
+        while (right < nums.size()) {
+            while ((bitmask & nums[right]) != 0) {  // Conflict found
+                bitmask ^= nums[left];  // Remove left element from bitmask
+                left++;
+            }
+
+            bitmask |= nums[right];  // Add right element to bitmask
+            maxLength = max(maxLength, right - left + 1);
+            right++;
+        }
+
+        return maxLength;
+    }
+};
