@@ -1,0 +1,60 @@
+class Solution {
+public:
+    vector<string> findAllRecipes(vector<string>& recipes, vector<vector<string>>& ingredients, vector<string>& supplies) {
+        // Step 1: Build a graph mapping each ingredient to the list of recipes that require it.
+        unordered_map<string, vector<string>> graph;
+        // Step 2: Create a map to track the number of ingredients each recipe still needs.
+        unordered_map<string, int> inDegree;
+        
+        // Initialize the in-degree for every recipe to 0.
+        for (const string &recipe : recipes) {
+            inDegree[recipe] = 0;
+        }
+        
+        // Build the graph:
+        // For each recipe, iterate through its required ingredients.
+        // For each ingredient, add the recipe to the graph mapping and increment its in-degree.
+        for (int i = 0; i < recipes.size(); i++) {
+            for (const string &ing : ingredients[i]) {
+                graph[ing].push_back(recipes[i]);
+                inDegree[recipes[i]]++;
+            }
+        }
+        
+        // Step 3: Initialize a queue with all the initial supplies (ingredients available).
+        queue<string> q;
+        for (const string &s : supplies) {
+            q.push(s);
+        }
+        
+        // This vector will store the recipes that can be made.
+        vector<string> result;
+        
+        // Step 4: Process the graph using BFS (topological sort concept)
+        while (!q.empty()) {
+            string current = q.front();
+            q.pop();
+            
+            // If current is a recipe (present in inDegree), add it to the result.
+            if (inDegree.find(current) != inDegree.end()) {
+                result.push_back(current);
+            }
+            
+            // Check if any recipes depend on the current ingredient.
+            if (graph.find(current) != graph.end()) {
+                // For each recipe that depends on current,
+                // decrement its in-degree since one required ingredient is now available.
+                for (const string &dependentRecipe : graph[current]) {
+                    inDegree[dependentRecipe]--;
+                    // If all ingredients for this recipe are now available, add it to the queue.
+                    if (inDegree[dependentRecipe] == 0) {
+                        q.push(dependentRecipe);
+                    }
+                }
+            }
+        }
+        
+        // Return the list of recipes that can be made.
+        return result;
+    }
+};
