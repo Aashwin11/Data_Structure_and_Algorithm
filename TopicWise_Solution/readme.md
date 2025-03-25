@@ -12,6 +12,8 @@
 - **[Problem: 69](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-69.txt)**
 - **[Problem: 2798](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-2798.txt)**
 - **[Problem: 977](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-977.txt)**
+- **[Problem: 56](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-56.txt)**
+
 
 
 <h3 align="left">Difference Array Technique:</h3>
