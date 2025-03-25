@@ -1,0 +1,46 @@
+//MERGE INTERVAL TECHNIQUE
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+
+        int n=intervals.size();
+        sort(begin(intervals),end(intervals));
+        vector<vector<int>> res;
+        res.push_back(intervals[0]);
+        for(int i=1;i<n;i++)
+        {
+            if(intervals[i][0]<res.back()[1])
+            {
+                res.back()[0]=min(intervals[i][0], res.back()[0]);
+                res.back()[1]=max(intervals[i][1], res.back()[1]);
+
+            }
+            else
+            {
+                res.push_back(intervals[i]);
+            }
+        }
+        return res;
+        
+    }
+    bool checkValidCuts(int n, vector<vector<int>>& rectangles) {
+        
+        vector<vector<int>> res1;
+        vector<vector<int>> res2;
+
+        for(auto& rec: rectangles)
+        {
+            int x1=rec[0];
+            int x2=rec[2];
+            int y1=rec[1];
+            int y2=rec[3];
+            res1.push_back({x1,x2});
+            res2.push_back({y1,y2});
+        }
+        vector<vector<int>> hor=merge(res1);
+        vector<vector<int>> ver=merge(res2);
+
+        return (hor.size()>=3 || ver.size()>=3);
+
+    }
+};
