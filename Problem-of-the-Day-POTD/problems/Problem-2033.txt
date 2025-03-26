@@ -1,0 +1,30 @@
+//Maths - Median Concept and derivation of target%x != num%x
+class Solution {
+public:
+    int minOperations(vector<vector<int>>& grid, int x) {
+        int m=grid.size();
+        int n=grid[0].size();
+        vector<int> vec;
+
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                vec.push_back(grid[i][j]);
+            }
+        }    
+        sort(begin(vec),end(vec));
+
+        int targetIndex=floor(vec.size()/2);
+        int target=vec[targetIndex];
+        int res=0;
+
+        for(auto&num : vec)
+        {
+            if(target%x != num%x) return -1;
+            res+=abs(target-num)/x;
+        }
+        return res;
+        
+    }
+};
