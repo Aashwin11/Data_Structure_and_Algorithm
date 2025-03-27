@@ -21,6 +21,9 @@
 
 - **[Problem: 307](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Difference_Array_Technique/Problem-307.txt)**
 
+<h3 align="left">Hash Map</h3>
+- **[Problem: 169](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Hash_Map/Problem-169.txt)**
+- **[Problem: 229](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Hash_Map/Problem-229.txt)**
 
 
 
