@@ -64,7 +64,7 @@
 - **[Problem: 2503(28/03/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2503.txt)**
 
 - **[Problem: 2818(29/03/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2818.txt)**
-
+- **[Problem: 2551(31/03/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2551.txt)**
 
 
 
