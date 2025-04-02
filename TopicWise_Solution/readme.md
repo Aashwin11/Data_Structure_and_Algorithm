@@ -25,6 +25,8 @@
 
 - **[Problem: 169](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Hash_Map/Problem-169.txt)**
 - **[Problem: 229](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Hash_Map/Problem-229.txt)**
+- **[Problem: 1189](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Hash_Map/Problem-1189.txt)**
+
 
 
 
