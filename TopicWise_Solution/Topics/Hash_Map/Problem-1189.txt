@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int maxNumberOfBalloons(string text) {
+        unordered_map<char,int> mp;
+        for(auto& ch:text)
+        {
+            mp[ch]++;
+        }
+        int count=0;
+        while(true)
+        {
+            if(mp['b']==0 || mp['a']==0 || mp['l']<=1 ||mp['o']<=1|| mp['n']==0 ) break;
+            mp['b']--;
+            mp['a']--;
+            mp['n']--;
+            mp['l']-=2;
+            mp['o']-=2;
+            count++;
+            
+
+
+
+        }
+        return count;
+    }
+};
