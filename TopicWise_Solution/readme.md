@@ -1,7 +1,8 @@
-# Topic Wise Solution
+<h1 align="center">Topic Wise Solution</h1>
 
-Welcome to the Topic Wise Solution. Below are topics which I have solved so far  
+<p align="center">Welcome to the Topic Wise Solution. Below are topics which I have solved so far</p>
 
+<h3 align="left">Topic Problems:</h3>
 
 <details>
   <summary><strong>Arrays</strong></summary>
