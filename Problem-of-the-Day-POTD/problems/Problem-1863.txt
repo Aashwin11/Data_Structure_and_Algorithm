@@ -1,0 +1,167 @@
+//Recursion + array
+class Solution {
+public:
+    int xortotal=0;
+    void solve(vector<int>& nums,int i,int currxor)
+    {
+        //base case
+        if(i==nums.size() ) 
+        {
+            xortotal=currxor+xortotal ;
+            return;
+
+        }
+        //when the elemnt is added
+        solve(nums,i+1,currxor^nums[i]);
+        //when the element is not added
+        solve(nums,i+1,currxor);
+    }
+
+
+    int subsetXORSum(vector<int>& nums) {
+        
+        //in case when array is empty
+        int n=nums.size();
+        if(n==0) return 0;
+
+        //rest of the cases -Recursion
+    
+        solve(nums,0,0);
+
+        return xortotal;
+    }
+};
+
+
+--------------------------------------------------------------
+DRY RUN:
+--------------------------------------------------------------
+nums = [5, 1, 6]
+
+We'll build a recursion tree where each level represents the decision at index i (whether to include or exclude the current element). 
+At each node, we show the current subset (or path) and the cumulative XOR (currentXor).
+
+Step 1: Start with an empty subset
+          [Start]
+   Subset: []    currentXor: 0
+
+
+
+Step 2: Decisions at index 0 (element 5)
+                   [Start]
+                      |
+          -------------------------
+          |                       |
+     Include 5               Exclude 5
+          |                       |
+Subset: [5]                Subset: []
+currentXor: 0^5=5         currentXor: 0
+
+
+
+Step 3: Decisions at index 1 (element 1)
+For the branch where 5 is included:
+
+          [Include 5]
+    Subset: [5]    currentXor: 5
+            |
+     ---------------------
+     |                   |
+Include 1          Exclude 1
+     |                   |
+Subset: [5,1]      Subset: [5]
+currentXor: 5^1=4  currentXor: 5
+
+For the branch where 5 is excluded:
+         [Exclude 5]
+   Subset: []       currentXor: 0
+            |
+     ---------------------
+     |                   |
+Include 1          Exclude 1
+     |                   |
+Subset: [1]       Subset: []
+currentXor: 0^1=1 currentXor: 0
+
+
+
+Step 4: Decisions at index 2 (element 6)
+Now, expand each branch for the decision at index 2 (element 6).
+
+Branch A: Subset [5,1] with currentXor = 4
+
+         [Subset: [5,1], cXor: 4]  (i=2)
+                |
+         -----------------------
+         |                     |
+   Include 6              Exclude 6
+         |                     |
+Subset: [5,1,6]       Subset: [5,1]
+currentXor: 4^6 = 2    currentXor: 4
+
+
+(Both branches reach i == 3, end of array, and add their currentXor values.)
+
+Branch B: Subset [5] with currentXor = 5
+          [Subset: [5], cXor: 5] (i=2)
+                |
+         -----------------------
+         |                     |
+   Include 6              Exclude 6
+         |                     |
+Subset: [5,6]         Subset: [5]
+currentXor: 5^6 = 3    currentXor: 5
+
+Branch C: Subset [1] with currentXor = 1
+         [Subset: [1], cXor: 1] (i=2)
+                |
+         -----------------------
+         |                     |
+   Include 6              Exclude 6
+         |                     |
+Subset: [1,6]         Subset: [1]
+currentXor: 1^6 = 7    currentXor: 1
+
+
+Branch D: Subset [] with currentXor = 0
+         [Subset: [], cXor: 0] (i=2)
+                |
+         -----------------------
+         |                     |
+   Include 6              Exclude 6
+         |                     |
+Subset: [6]           Subset: []
+currentXor: 0^6 = 6    currentXor: 0
+
+
+
+Step 5: Reaching the Leaves (i == 3)
+At the end of the array (i == 3), each branch returns its currentXor which is added to the global total.
+
+Leaf values:
+
+From Branch A:
+
+Subset [5,1,6]: XOR = 2
+Subset [5,1]: XOR = 4
+
+From Branch B:
+
+Subset [5,6]: XOR = 3
+Subset [5]: XOR = 5
+
+From Branch C:
+
+Subset [1,6]: XOR = 7
+Subset [1]: XOR = 1
+
+From Branch D:
+
+Subset [6]: XOR = 6
+Subset []: XOR = 0
+
+
+
+
+
+
