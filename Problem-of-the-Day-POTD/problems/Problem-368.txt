@@ -1,0 +1,96 @@
+//LIS APPROACH
+class Solution {
+public:
+    void solve(vector<int>& nums,int i,vector<int>& temp ,vector<int>& res, int prev)
+    {
+        //4.Base case
+        if(i>=nums.size())
+        {
+            if(temp.size()> res.size())
+            {
+                res=temp;
+            }
+            return;
+        }
+
+        //2.
+        // Take index i 
+        // when : if prev is nothing i.e. -1 
+        //OR 
+        //nums[i]%prev==0
+        if(prev==-1 || nums[i]%prev==0)
+        {
+            // push the index element i at temp 
+            // now my prev element is nums[i]
+            temp.push_back(nums[i]);
+            solve(nums,i+1,temp,res, nums[i]);
+
+            // 3.when i inedx not taken 
+            temp.pop_back();
+        }
+
+        solve(nums,i+1,temp,res,prev);
+
+
+    }
+
+    vector<int> largestDivisibleSubset(vector<int>& nums) {
+        //1. Sort
+        sort(begin(nums),end(nums));
+
+        vector<int>res;
+        vector<int> temp;
+        int prev=-1;
+        solve(nums,0,temp,res,prev);
+
+        return res;
+        
+    }
+};
+
+PROBLEM: TLE
+
+APPROACH _2:
+Bottom Up Approach
+
+class Solution {
+public:
+    vector<int> largestDivisibleSubset(vector<int>& nums) {
+        sort(begin(nums),end(nums));
+        int n=nums.size();
+        vector<int> dp(n,1);
+        vector<int> prev(n,-1);
+        int maxL=1;
+        int lastIndexofMaxL=0;
+        for(int i=1;i<n;i++)
+        {
+            for(int j=0;j<i;j++)
+            {
+                if(nums[i]%nums[j]==0){
+                 if(dp[i]<dp[j]+1)
+                 {
+                    dp[i]=dp[j]+1;
+                    prev[i]=j;
+                 }
+
+                 if(dp[i]>maxL)
+                 {
+                    maxL=dp[i];
+                    lastIndexofMaxL=i;
+                 }
+
+                }
+            }
+        }
+
+        vector<int> res;
+        while(lastIndexofMaxL!=-1)
+        {
+            res.push_back(nums[lastIndexofMaxL]);
+            lastIndexofMaxL=prev[lastIndexofMaxL];
+        }
+        return res;
+
+
+    }
+};

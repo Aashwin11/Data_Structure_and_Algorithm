@@ -1,0 +1,8 @@
+class Solution {
+public:
+    int mySqrt(int x) {
+        double n=sqrt(x);
+        return floor(n);
+        
+    }
+};

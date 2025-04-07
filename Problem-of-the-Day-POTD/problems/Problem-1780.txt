@@ -1,0 +1,54 @@
+Approach -1 :
+class Solution {
+public:
+    bool solve(int n, int i,int curr_sum)
+    {
+        if(curr_sum>n) return false;
+        if(n==curr_sum) return true;
+
+        if(pow(3,i)>n) return false;
+
+        //case where i dont include the power
+        bool res1=solve(n,i+1,curr_sum);
+
+        // case whn i include the power
+        bool res2=solve(n,i+1,curr_sum+pow(3,i));
+
+        return (res1 || res2);
+    }
+    bool checkPowersOfThree(int n) {
+        
+        bool res=solve(n,0,0);
+
+        return res;
+    }
+};
+
+
+optimized approach , this is suing ternary represntation , so what it means is that :
+"ternary representation should contain only 0s and 1s (i.e., no 2s)."
+
+Convert 21 to Base-3 (Ternary Representation)
+
+Divide 21 by 3 iteratively:
+Copy
+Edit
+21 ÷ 3 = 7, remainder = 0
+7 ÷ 3 = 2, remainder = 1
+2 ÷ 3 = 0, remainder = 2
+
+
+CODE:
+
+class Solution {
+public:
+    bool checkPowersOfThree(int n) {
+        while (n > 0) {
+            if (n % 3 == 2) {
+                return false;
+            }
+            n /= 3;
+        }
+        return true;
+    }
+};

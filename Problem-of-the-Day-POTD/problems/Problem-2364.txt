@@ -1,0 +1,24 @@
+class Solution {
+public:
+    long long countBadPairs(vector<int>& nums) {
+        int n=nums.size();
+        long long res=0;
+        for(int i=0;i<n;i++)
+        {
+          nums[i]=nums[i]-i;
+        }
+        unordered_map <int,int> mp;
+        mp[nums[0]]=1;
+        for (int j=1;j<n;j++)
+        {
+            int total_Number_of_Elements_Before_j=j;
+            int count_of_the_samm_element_before_jth_element=mp[nums[j]];
+            int bad_pair= total_Number_of_Elements_Before_j - count_of_the_samm_element_before_jth_element;
+            res+=bad_pair;
+            mp[nums[j]]++;
+        }
+        return res;
+
+        
+    }
+};

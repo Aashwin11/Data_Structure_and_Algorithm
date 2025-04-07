@@ -1,0 +1,28 @@
+class Solution {
+public:
+    unordered_map<int, int> mp; // Stores depth of each node
+    int maxD = 0; // Tracks maximum depth
+
+    void depth(TreeNode* root, int d) {
+        if (!root) return; // Base case: no node
+        maxD = max(maxD, d);
+        mp[root->val] = d;
+        depth(root->left, d + 1); // Recursively traverse left subtree
+        depth(root->right, d + 1); // Recursively traverse right subtree
+    }
+
+    TreeNode* lca(TreeNode* root) {
+        if (root == NULL || mp[root->val] == maxD) return root; // Base cases
+        
+        TreeNode* l = lca(root->left);
+        TreeNode* r = lca(root->right);
+
+        if (l != NULL && r != NULL) return root; // If both children return non-null, this is the LCA
+        return l != NULL ? l : r; // Return non-null child, if any
+    }
+
+    TreeNode* lcaDeepestLeaves(TreeNode* root) {
+        depth(root, 0); // Populate depths and find maximum depth
+        return lca(root); // Find the LCA of nodes at maximum depth
+    }
+};

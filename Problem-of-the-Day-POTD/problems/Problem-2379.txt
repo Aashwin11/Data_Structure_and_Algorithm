@@ -1,0 +1,42 @@
+class Solution {
+public:
+    int minimumRecolors(string blocks, int k) {
+        // SLIDING WINDOW PROBLEM 
+
+        int left=0;
+        int maxop=INT_MAX;
+        int numWhites=0;
+
+        for(int right=0;right <blocks.size();right++)
+        {
+            //if current element in the string is W
+            if(blocks[right]=='W')
+            {
+                //increment numWhites;
+                numWhites++;
+
+            }
+
+            //Check if the window size if equal to k 
+            if(right-left+1==k)
+            {
+                maxop=min(maxop,numWhites);
+
+            //Now If the current element was 'W' , then I need to move my window to next, but 
+            // in the current window after moving , 'W' will no longer be there , so we should
+            // not count W , so decrement numWhites and since window is sliding , left will     
+            // start from next element.
+
+            if(blocks[left]=='W')
+            {
+                numWhites--;
+             
+            }
+            left++;
+            }
+
+        }
+
+    return maxop;
+    }
+};

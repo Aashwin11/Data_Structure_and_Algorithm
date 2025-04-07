@@ -1,0 +1,82 @@
+class Solution {
+public:
+unordered_map <int,vector<int>> adj;
+unordered_map <int,int> bobMap;
+    int aliceIncome;
+    bool dfsBob(int curr, int t, vector<bool>& visited)
+    {
+        visited[curr]=true;
+        bobMap[curr]=t;
+
+        if(curr==0) 
+        {
+            //reached node 0
+            return true;
+        }
+
+        for(auto &ngbr:adj[curr])
+        {
+            if(!visited[ngbr])
+            {
+                if(dfsBob(ngbr,t+1,visited)==true)
+                return true;
+            }
+        }
+
+        bobMap.erase(curr);
+        return false; 
+    }
+
+
+    void dfsAlice(int curr, int t,int income,vector<bool>& visited, vector<int>& amount)
+    {
+
+        visited[curr]=true;
+        if(bobMap.find(curr)== bobMap.end() || t<bobMap[curr])
+        {
+            income+=amount[curr];
+        }
+        else if (t==bobMap[curr])
+        {
+            income+=amount[curr]/2;
+        }
+
+        if(adj[curr].size()==1 && curr!=0)
+        {
+            aliceIncome=max(aliceIncome,income);
+        }
+        for(auto &ngbr :adj[curr])
+        {
+            if(!visited[ngbr])
+            {
+                dfsAlice(ngbr,t+1,income,visited,amount);
+            }
+        }
+
+
+    }
+    int mostProfitablePath(vector<vector<int>>& edges, int bob, vector<int>& amount) {
+        int n=amount.size();
+        aliceIncome=INT_MIN;
+
+        for(vector<int> edge: edges)
+        {
+            int u=edge[0];
+            int v=edge[1];
+            adj[u].push_back(v);
+            adj[v].push_back(u);
+        }
+        
+
+        //DFS on Bob to find to reach to node 0
+        int time=0;
+        vector<bool> visited(n,false);
+        dfsBob(bob,time,visited);
+
+
+        int currIncome=0;
+        visited.assign(n,false);
+        dfsAlice(0,0,currIncome,visited,amount);
+        return aliceIncome;
+    }
+};

@@ -1,0 +1,23 @@
+class Solution {
+public:
+
+//KADANE's Algorithm
+    int maxAbsoluteSum(vector<int>& nums) {
+        int currMaxSubSum=nums[0];
+        int currMinSubSum=nums[0];
+        int maxSubSum=nums[0];
+        int minSubSum=nums[0];
+        int n=nums.size();
+        for(int i=1;i<n;i++)
+        {
+            currMaxSubSum=max(nums[i],currMaxSubSum+nums[i]);
+            currMinSubSum=min(nums[i],currMinSubSum+nums[i]);
+            maxSubSum=max(maxSubSum,currMaxSubSum);
+            minSubSum=min(minSubSum,currMinSubSum);
+
+        }
+        minSubSum=abs(minSubSum);
+        return max(maxSubSum,minSubSum);
+        
+    }
+};

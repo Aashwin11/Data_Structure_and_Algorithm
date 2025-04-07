@@ -1,0 +1,49 @@
+//Binary search on answer
+class Solution {
+public:
+    bool isPossible(vector<int>& ranks, int cars,long long mid)
+    {
+        long long sum=0;
+        for(int i=0;i<ranks.size();i++)
+        {
+            int n = floor(sqrt(1LL * mid / ranks[i]));  // Fix: Ensure proper division
+            sum+=n;
+            if(sum>=cars) return true;
+        }
+        return false;
+        
+    }
+    long long repairCars(vector<int>& ranks, int cars) {
+
+        //applying  binary search on time ,
+
+        // thus , what could be the least time taken , the time taken by the most ranked        
+        // mechanic to repair 1 car
+        long long left = *min_element(begin(ranks), end(ranks)) * 1LL;
+        cout<<left<<endl;
+
+        // what could the most time taken , the time taken to repair all the cars by the slowest mechanic 
+        long long right = *min_element(begin(ranks), end(ranks)) * 1LL * cars * cars;
+        cout<<right;
+        long long result=right;
+
+        while(left<=right)
+        {
+            long long mid=left+(right-left)/2;
+
+            if(isPossible(ranks,cars,mid))
+            {
+                result=mid;
+                right=mid-1;
+            }
+            else
+            {
+                left=mid+1;
+            }
+        }
+
+
+        return result;
+        
+    }
+};

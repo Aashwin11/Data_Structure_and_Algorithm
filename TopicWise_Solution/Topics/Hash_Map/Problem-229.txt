@@ -1,0 +1,29 @@
+//Majority element Concept
+class Solution {
+public:
+    vector<int> majorityElement(vector<int>& nums) {
+        unordered_map<int,int> mp;
+        int n=nums.size();
+        for(auto&num : nums)
+        {
+            mp[num]++;
+        }
+        vector<int> res;
+        for(int i=0;i<n;i++)
+        {
+            if(mp[nums[i]]>n/3)
+            {
+            if(find(res.begin(), res.end(), nums[i]) == res.end()) //if element is not in the array
+            {
+                res.push_back(nums[i]);
+            }
+
+            }
+        }
+        return res;
+
+
+        
+    }
+};
+        

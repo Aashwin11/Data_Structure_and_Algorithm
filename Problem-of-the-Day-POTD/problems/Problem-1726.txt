@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int tupleSameProduct(vector<int>& nums) {
+        
+        int n=nums.size();
+        sort(begin(nums),end(nums));
+        int tuple=0;
+        int prod=1;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=n-1;j>i;j--)
+            {
+                unordered_set<int> st;
+                prod=nums[i]*nums[j];
+                for(int k=i+1;k<j;k++)
+                {   
+                    if(prod%nums[k]==0)
+                    {
+                        int d=prod/nums[k];
+                        if(st.count(d))
+                        {
+                            tuple++;
+                           
+                        }
+                        st.insert(nums[k]);
+                    }
+                }
+            }
+        }
+    return tuple*8;
+
+    }
+};

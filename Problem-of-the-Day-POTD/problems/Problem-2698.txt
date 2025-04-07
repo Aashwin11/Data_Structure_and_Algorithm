@@ -1,0 +1,36 @@
+APPROACH-1:
+class Solution {
+public:
+
+    bool check( string sq, int num, int i, int currSum )
+    {
+        if(i==sq.size()) return currSum==num;
+
+        if(currSum>num) return false;
+        for(int j=i;j<sq.size();j++)
+        {
+            int iVal=stoi(sq.substr(i,j-i+1));
+            if( check(sq,num,j+1,currSum+iVal)) return true;
+
+        }
+        return false;
+    }
+    int punishmentNumber(int n) {
+
+
+        int totSum=0;
+        for(int num=1;num<=n;num++)
+        {
+            int sq=num*num;
+            if(check(to_string(sq),num,0,0)==true)
+            {
+                totSum+=sq;
+            }
+            
+        }
+        return totSum;
+        
+    }
+};
+
+APPROACH 2:

@@ -1,0 +1,22 @@
+//ARRAY-DP -MEMOIZATION
+
+class Solution {
+public:
+    long long solve(vector<vector<int>>& questions,int i, vector<long long>& dp)
+    {
+        if(i>=questions.size())
+        {
+            return 0;
+        }
+        if(dp[i]!= -1) return dp[i];
+
+        return dp[i]=max(solve(questions,i+1,dp),questions[i][0]+solve(questions,i+1+questions[i][1],dp));
+    }
+    long long mostPoints(vector<vector<int>>& questions) {
+        vector<long long> dp(questions.size(),-1);
+
+        long long maxPoints=solve(questions,0,dp);
+        return maxPoints;
+        
+    }
+};

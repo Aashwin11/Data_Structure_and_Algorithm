@@ -1,0 +1,96 @@
+// Map - Brute Force Method
+class Solution {
+public:
+    int minimumIndex(vector<int>& nums) {
+
+        unordered_map<int,int> mp1;
+        unordered_map<int,int> mp2;
+
+        //when split was before index 0
+        for(auto&num : nums)
+        {
+            mp2[num]++;
+        }
+        // when split takes place after index 0
+
+        for(int i=0;i<nums.size();i++){
+            mp1[nums[i]]++;
+            mp2[nums[i]]--;
+            int m1=i+1;
+            int m2=nums.size()-i-1;
+
+            if(mp2[nums[i]]==0)
+            {
+                mp2.erase(nums[i]);
+            }
+            if(mp1[nums[i]] * 2 > m1 && mp2[nums[i]] * 2 > m2)
+            {
+                return i;
+            }
+
+        }
+        return -1;
+
+
+// Majority element concept:
+class Solution {
+public:
+    int minimumIndex(vector<int>& nums) {
+        int n=nums.size();
+
+        //majority element -Boyer Moore Algo
+        int maj=-1;
+        int count=0;
+        for(auto&num :nums)
+        {
+            if(count==0)
+            {
+                maj=num;
+                count=1;
+            }
+            else if(maj==num)
+                {
+                    count++;
+                }
+            else
+                {
+                 count--;
+                }
+            }
+        int majCount=0;
+        for(auto&num :nums)
+        {
+            if(num==maj)
+            {
+                majCount++;
+            }
+        }
+        count=0;
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]==maj)
+            {
+                count++; //left subarray has how many majority element
+            }
+            int remainingCount=majCount-count; // right subarray has how many majority element
+            int n1=i+1;
+            int n2=n-i-1;
+            if(count*2> n1 && remainingCount*2>n2)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+
+
+        }      
+};
+
+
+        
+    }
+};
+
+
+//Majority element approach

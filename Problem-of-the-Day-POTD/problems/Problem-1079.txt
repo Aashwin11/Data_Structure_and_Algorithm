@@ -1,0 +1,70 @@
+class Solution {
+public:
+    int n;
+    void solve( unordered_set<string>& ans,vector<bool>& used, string& curr, string& tiles)
+    {
+        ans.insert(curr);
+
+        for(int i=0;i<n;i++)
+        {
+            if(used[i]==true) continue;
+
+            //try
+            used[i]=true;
+            curr.push_back(tiles[i]);
+
+            //explore
+            solve(ans,used,curr, tiles);
+
+            //undo
+            used[i]=false;
+            curr.pop_back();
+        }
+    }
+    int numTilePossibilities(string tiles) {
+        n=tiles.length();
+        vector<bool> used (n,false);
+        unordered_set<string> ans;
+
+        string curr="";
+        solve(ans,used,curr,tiles);
+
+        return ans.size()-1;
+    }
+};
+
+APPROACH 2:
+class Solution {
+public:
+    int totalCount=0;
+
+    void solve( vector<int>& freq)
+    {
+        totalCount++;
+
+        for(int i=0;i<freq.size();i++)
+        {
+            if(freq[i]==0) continue;
+
+            //try
+            freq[i]--;
+            
+            //explore
+            solve(freq);
+
+            //undo
+            freq[i]++;
+
+
+        }
+    }
+    int numTilePossibilities(string tiles) {
+        vector<int> freq(26,0);
+
+        for(char &ch : tiles)
+        freq[ch-'A']++;
+        
+        solve(freq);
+        return totalCount-1;
+    }
+};
