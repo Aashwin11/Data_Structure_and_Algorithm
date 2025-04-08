@@ -1,0 +1,70 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* head3=nullptr;
+       void solve(ListNode* head1, ListNode* head2) {
+        if (head2 == nullptr) {
+        if (head1 != nullptr)
+            head1->next = nullptr;  // Prevent cycle or dangling access
+        return;
+    }
+
+        ListNode* temp1 = head1;
+        head1 = head1->next;
+
+        ListNode* temp2 = head2;
+        head2 = head2->next;
+
+        temp1->next = temp2;
+        temp2->next = head1;
+
+        solve(head1, head2);
+    }
+    ListNode* reverse(ListNode* head2, ListNode* curr, ListNode* prev)
+    {
+        if(head2->next==nullptr)
+        {
+        curr->next = prev;
+        return curr;
+        }
+        head2=head2->next;
+        curr->next=prev;
+        prev=curr;
+        curr=head2;
+        return reverse(head2,curr,prev);
+
+    }
+    void reorderList(ListNode* head) {
+        ListNode* temp=head;
+        int n = 0;
+        while (temp != nullptr)
+        {
+            n++;
+            temp = temp->next;
+        }
+        temp=head;
+        int half=n/2;
+        for(int i=0;i<half;i++)
+        {
+            temp=temp->next;
+        }
+        cout<<"Val-"<<temp->val;
+        ListNode* curr=temp;
+        ListNode* head2=reverse(temp,curr,nullptr);
+        cout<<"Head2-"<<head2->val;
+        head3=head;
+        solve(head,head2);
+        
+        
+
+    }
+};
