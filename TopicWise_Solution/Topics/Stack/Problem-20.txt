@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<int> st;
+        
+        for(char ch: s)
+        {
+            if((ch==')'&& st.empty()) || (ch=='}'&& st.empty()) || (ch==']'&& st.empty())) return    false;
+            if(ch ==')' && st.top()=='(') st.pop();
+            else if(ch =='}' && st.top()=='{') st.pop();
+            else if(ch ==']' && st.top()=='[') st.pop();
+            else{
+                st.push(ch);
+            }
+
+        }
+        if(st.empty()) return true;
+        return false;
+
+        
+    }
+};
