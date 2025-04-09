@@ -14,7 +14,11 @@
   - **[Problem: 56](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Array/Problem-56.txt)**
 
 </details>
+<details>
+  <summary><strong>String</strong></summary>
 
+  - **[Problem-500](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/String/Problem-500.txt)**
+</details>
 <details>
   <summary><strong>Difference Array Technique</strong></summary>
 
