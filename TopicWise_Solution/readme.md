@@ -41,9 +41,6 @@
 
   - **[Problem: 300](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/Topics/Hash_Map/Problem-300.txt)**
 </details>
-
-<details>
-
 <details>
   <summary><strong>Stack</strong></summary>
 
