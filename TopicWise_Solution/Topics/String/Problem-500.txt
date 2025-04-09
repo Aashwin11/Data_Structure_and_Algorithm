@@ -1,0 +1,48 @@
+class Solution {
+public:
+    vector<string> findWords(vector<string>& words) {
+
+        string w1="qwertyuiop";
+        string w2="asdfghjkl";
+        string w3="zxcvbnm";
+        
+        sort(begin(w1),end(w1));
+        sort(begin(w2),end(w2));
+        sort(begin(w3),end(w3));
+        
+        int f1=true;
+        int f2=true;
+        int f3=true;
+        vector<string> ans;
+        for(auto&w: words)
+        {
+            // transform(w.begin(), w.end(), w.begin(), ::tolower);
+            cout<<"Iteration-"<<w<<endl;
+            cout<<w<<endl;
+            for(char c: w)
+            {   
+                cout<<c<<endl;
+                c=tolower(c);
+                if(!(w1.find(c)!=string::npos)) f1=false;
+                if(!(w2.find(c)!=string::npos)) f2=false;
+                if(!(w3.find(c)!=string::npos)) f3=false;
+            }
+            cout<<"f1-"<<f1;
+            cout<<"f2-"<<f2;
+            cout<<"f3-"<<f3;
+
+            if(f1||f2||f3) ans.push_back(w);
+            f1=true;
+            f2=true;
+            f3=true;
+
+        }
+        
+        return ans;
+
+
+    }
+};
+
+Explanation:
+
