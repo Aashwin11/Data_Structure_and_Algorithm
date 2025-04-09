@@ -1,0 +1,251 @@
+class Solution {
+public:
+    int minOperations(vector<int>& nums, int k) {
+        int n=nums.size();
+
+        unordered_set<int> st;
+        for(auto& num: nums)
+        {
+            if(num<k) return -1;
+            if(num>k)
+            {
+               st.insert(num);     
+            }
+        }
+
+        return st.size();
+        
+    }
+};
+
+EXPLANATION:
+Explanation
+  -You originally thought of a process where you would gradually “lower” all numbers toward k by repeatedly reducing the highest values step by step. 
+  In that conceptual approach, you’d pick the maximum, reduce numbers above a certain threshold in a series of operations, and count each such operation until 
+  all numbers become k.
+
+  -However, you realized that the problem has an important constraint: if any number in the array is less than k, 
+  then it is impossible to reach the goal (i.e. make all numbers equal to k) because you cannot increase a number. In that case, you return -1.
+
+  -For all numbers that are greater than k, you can “simulate” the process with one operation per unique value greater than k. 
+  In other words, each distinct number above k represents one separate “conversion step” to eventually reduce those numbers down to k. 
+  This is why you use an unordered set. The set automatically keeps track of unique numbers that are strictly greater than k. 
+  Finally, the number of unique values in the set gives you the minimum number of operations required.
+
+
+DRY RUN:
+Dry Run 1: Input: nums = [5, 2, 5, 4, 5], k = 2
+Initially:
+
+   ----+----+----+----+----+
+   | 5  | 2  | 5  | 4  | 5  |
+   ----+----+----+----+----+
+     0    1    2    3    4
+
+Step 1: Process Index 0 (Element: 5)
+    Pointer at Index 0:
+         i
+     ----+----+----+----+----+
+     | 5  | 2  | 5  | 4  | 5  |
+     ----+----+----+----+----+
+        Current Element: 5
+        
+        Check:
+        Is 5 < k? Since 5 < 2 is false, we continue.
+        Is 5 > k? Yes, 5 > 2.
+        
+        Action:
+        Insert 5 into the set.
+        State of Set: {5}
+
+Step 2: Process Index 1 (Element: 2)
+    Pointer at Index 1:
+             i
+     ----+----+----+----+----+
+     | 5  | 2  | 5  | 4  | 5  |
+     ----+----+----+----+----+
+        Current Element: 2
+        
+        Check:
+        Is 2 < k? 2 < 2 is false.
+        Is 2 > k? 2 > 2 is also false (since it is equal to k).
+        
+        Action:
+        Do nothing.
+
+        State of Set: Remains {5}
+
+Step 3: Process Index 2 (Element: 5)
+    Pointer at Index 2:
+                     i
+     ----+----+----+----+----+
+     | 5  | 2  | 5  | 4  | 5  |
+     ----+----+----+----+----+
+        Current Element: 5
+        
+        Check:
+        Is 5 < k? No.
+        Is 5 > k? Yes.
+        
+        Action:
+        Since 5 is already in the set (duplicate), nothing new is added.
+        State of Set: {5}
+
+Step 4: Process Index 3 (Element: 4)
+    Pointer at Index 3:
+                                 i
+         ----+----+----+----+----+
+         | 5  | 2  | 5  | 4  | 5  |
+         ----+----+----+----+----+
+        Current Element: 4
+        
+        Check:
+        Is 4 < k? No.
+        Is 4 > k? Yes.
+        
+        Action:
+        Insert 4 into the set.
+        
+        State of Set: {4, 5}
+        (Note: Sets are unordered, so the order here is not significant.)
+
+Step 5: Process Index 4 (Element: 5)
+    Pointer at Index 4:
+                           i
+     ----+----+----+----+----+
+     | 5  | 2  | 5  | 4  | 5  |
+     ----+----+----+----+----+
+          
+          Current Element: 5
+          
+          Check:
+          Is 5 < k? No.
+          Is 5 > k? Yes.
+          
+          Action:
+          5 is already present in the set so no change.
+          State of Set: {4, 5}
+
+Final Outcome for Dry Run 1:
+  Unique Elements Greater than k: {4, 5}
+  
+  Number of Operations (size of set): 2
+  
+  Return Value: 2
+
+--------------------------------------------------------------------
+
+Dry Run 2: Input: nums = [7, 2, 7, 2, 3], k = 1
+Initial Setup
+Input Array: [7, 2, 7, 2, 3]
+
+k: 1
+
+Unordered Set (st): Initially empty
+
+Again, we traverse the array element by element.
+
+DRY RUN:
+Initial Array Representation:
+
+   ----+----+----+----+----+
+   | 7  | 2  | 7  | 2  | 3  |
+   ----+----+----+----+----+
+     0    1    2    3    4
+
+
+Step 1: Process Index 0 (Element: 7)
+  Pointer at Index 0:
+         i
+     ----+----+----+----+----+
+     | 7  | 2  | 7  | 2  | 3  |
+     ----+----+----+----+----+
+        Current Element: 7
+      
+          Check:
+          Is 7 < k? Since 7 < 1 is false, continue.
+          Is 7 > k? Yes, 7 > 1.
+          
+          Action:
+          Insert 7 into the set.
+          State of Set: {7}
+
+Step 2: Process Index 1 (Element: 2)
+    Pointer at Index 1:
+             i
+     ----+----+----+----+----+
+     | 7  | 2  | 7  | 2  | 3  |
+     ----+----+----+----+----+
+        Current Element: 2
+        
+        Check:
+        Is 2 < k? 2 < 1 is false.
+        Is 2 > k? Yes, 2 > 1.
+        
+        Action:
+        Insert 2 into the set.
+        State of Set: {7, 2}
+
+Step 3: Process Index 2 (Element: 7)
+    Pointer at Index 2:
+                     i
+     ----+----+----+----+----+
+     | 7  | 2  | 7  | 2  | 3  |
+     ----+----+----+----+----+
+        Current Element: 7
+        
+        Check:
+        Is 7 < k? No.
+        Is 7 > k? Yes.
+        
+        Action:
+        7 is already present in the set; no change.
+        State of Set: {7, 2}
+
+Step 4: Process Index 3 (Element: 2)
+Pointer at Index 3:
+    
+                             i
+     ----+----+----+----+----+
+     | 7  | 2  | 7  | 2  | 3  |
+     ----+----+----+----+----+
+        Current Element: 2
+        
+        Check:
+        Is 2 < k? No.
+        Is 2 > k? Yes.
+        
+        Action:
+        2 is already in the set, so nothing changes.
+        State of Set: {7, 2}
+
+Step 5: Process Index 4 (Element: 3)
+Pointer at Index 4:
+                            i
+     ----+----+----+----+----+
+     | 7  | 2  | 7  | 2  | 3  |
+     ----+----+----+----+----+
+        Current Element: 3
+        
+        Check:
+        Is 3 < k? No.
+        Is 3 > k? Yes.
+        
+        Action:
+        Insert 3 into the set.
+        State of Set: {7, 2, 3}
+
+Final Outcome for Dry Run 2:
+  Unique Elements Greater than k: {7, 2, 3}
+  Number of Operations (size of set): 3
+  Return Value: 3
+
+
+
+
+
+
+
+
+
+
