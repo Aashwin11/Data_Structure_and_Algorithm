@@ -90,6 +90,8 @@
   - **[Problem: 1863(05/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1863.txt)**
   - **[Problem: 368(06/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-368.txt)**
   - **[Problem: 3396(08/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3396.txt)**
+  - **[Problem: 3375(09/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3375.txt)**
+
 </details>
 
 
