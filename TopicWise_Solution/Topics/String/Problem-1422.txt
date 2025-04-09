@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int maxScore(string s) {
+        int n=s.size();
+
+        int ones=0;
+        int zeros=0;
+        int maxCount=INT_MIN;
+        for(auto& ch : s)
+        {
+            if(ch=='1') ones++;
+        }
+
+        for(int i=0;i<n-1;i++)
+        {
+            if(s[i]=='0') zeros++;
+            else ones--;
+
+            maxCount=max(maxCount, zeros+ones);
+        }
+        
+        return maxCount;
+    }
+};
+
+EXPLANATION:
+Only catch here was to run the 2nd loop before n-1 , 
+because it will ensure automatically that the right side partition will always have a value ensuring non empty side
