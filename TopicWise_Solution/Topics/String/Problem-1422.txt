@@ -26,3 +26,27 @@ public:
 EXPLANATION:
 Only catch here was to run the 2nd loop before n-1 , 
 because it will ensure automatically that the right side partition will always have a value ensuring non empty side
+
+APPROACH : 2 //One pass
+class Solution {
+public:
+    int maxScore(string s) {
+        
+        int n=s.size();
+
+        int zeros=0;
+        int ones=0;
+        int res=INT_MIN;
+
+        for(int i=0;i<n-1;i++) // Why ? So that if its a zero at the last index, it stays on th right substring , so right substring doesnt get empty
+        {
+            if(s[i]=='1') ones++;
+            else
+            zeros++;
+            res=max(res,zeros-ones);
+        }
+        if(s[n-1]=='1') ones++; // if the last element was 1, so it should be counted for the right substring , So 1++
+
+        return res+ones;
+    }
+};
