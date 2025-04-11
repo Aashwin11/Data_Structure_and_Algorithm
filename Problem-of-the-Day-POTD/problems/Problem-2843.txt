@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int countSymmetricIntegers(int low, int high) 
+    {
+        
+
+        int count = 0;
+        for (int num = low; num <= high; ++num) {
+            std::string numStr = std::to_string(num);
+            int n = numStr.size();
+            if (n % 2 != 0) continue; // Skip if the number of digits is odd
+
+            int firstSum = 0, secondSum = 0;
+            for (int i = 0; i < n / 2; ++i) {
+                firstSum += numStr[i] - '0';
+            }
+            for (int i = n / 2; i < n; ++i) {
+                secondSum += numStr[i] - '0';
+            }
+            if (firstSum == secondSum) count++;
+        }
+        return count;
+
+        
+    }
+};
