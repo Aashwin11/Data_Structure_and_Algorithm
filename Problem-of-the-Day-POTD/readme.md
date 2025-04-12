@@ -93,6 +93,7 @@
   - **[Problem: 3375(09/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3375.txt)**
   - **[Problem: 2999 - Count the Number of Powerful Integers (09/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2999.txt)**
   - **[Problem: 2843 - Count Symmetric Integers(11/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2843.txt)**
+  - **[Problem: 3272 - Find the Count of Good Integers(12/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3272.txt)**
 
 
 
