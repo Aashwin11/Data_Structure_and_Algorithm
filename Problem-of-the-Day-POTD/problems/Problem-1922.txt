@@ -1,21 +1,155 @@
+//BIT MANIPULATION + Logic
 class Solution {
-private:
-    static constexpr int mod = 1000000007;
 public:
-    int countGoodNumbers(long long n) {
-        // use fast exponentiation to calculate x^y % mod
-        auto quickmul = [](int x, long long y) -> int {
-            int ret = 1, mul = x;
-            while (y > 0) {
-                if (y % 2 == 1) {
-                    ret = (long long)ret * mul % mod;
-                }
-                mul = (long long)mul * mul % mod;
-                y /= 2;
-            }
-            return ret;
-        };
+    const int MOD = 1e9 + 7;
 
-        return (long long)quickmul(5, (n + 1) / 2) * quickmul(4, n / 2) % mod;
+    long long power(long long base, long long exponent,long long mod)
+    {
+        long long result=1;
+        base%=mod;
+        while(exponent>0)
+        {
+            if(exponent%2==1) result=(result*base) %mod;
+            base=(base*base) % mod;
+            exponent/=2;
+        }
+        return result%mod;
+    }
+    int countGoodNumbers(long long n) {
+        if(n==1) return 5;
+
+
+        long long evenNo=(n+1)/2;
+        long long oddNo=n/2;
+
+        long long evenCombo=power(5,evenNo,MOD);
+        long long oddCombo=power(4,oddNo,MOD) ;
+
+        return (evenCombo*oddCombo)% MOD;
+        
     }
 };
+
+EXPLANATION:
+
+1. Problem Overview
+    We want to count “good” digit strings of length n. A string is “good” if:
+    Even-indexed positions (0-indexed) have an even digit (0, 2, 4, 6, 8) → 5 choices per position.
+    Odd-indexed positions (0-indexed) have a prime digit (2, 3, 5, 7) → 4 choices per position.
+
+    Because positions are indexed from 0:
+        Even positions: index 0, 2, 4, …
+        Odd positions: index 1, 3, 5, …
+
+    If n is the string length, then:
+
+        -The number of even positions = (n + 1) / 2
+            (For odd lengths, there’s one extra even index because index 0 is even.)
+
+        -The number of odd positions = n / 2
+
+    Thus, the total number of good numbers is:
+                        5^even positions × 4^odd positions % MOD;
+
+
+2. The power() Function
+        This function computes:base^exponent % mod
+         
+        For example, if we wish to compute a^13, note that:
+          13 in binary = 1101
+          This means:
+           - The rightmost bit (2⁰) is 1 → include a^(1)
+           - The next bit (2¹) is 0 → skip a^(2)
+           - The next bit (2²) is 1 → include a^(4)
+           - The leftmost bit (2³) is 1 → include a^(8)
+        Thus, a^13 can be written as:
+             a^(8+4+1) = a^8 × a^4 × a^1
+
+        The binary digits tell us which powers of the base “count” (if the bit is 1) and which ones do not (if the bit is 0).
+
+        2. Multiplying with the Result When a Bit is 1
+
+            We start with result = 1 (the multiplicative identity).
+
+            As we process each bit of the exponent (starting with the least significant bit):   
+            - If the current bit is 1:
+                Multiply result by the current base value.
+                This is equivalent to “including” that power of the base in our final product.   
+            - If the current bit is 0:
+                Do not modify result, because that corresponding power of the base is not needed.
+
+            In our example with exponent 13 (binary 1101):
+              - The 2⁰ bit is 1 → multiply by a^(1)
+              - The 2¹ bit is 0 → do nothing
+              - The 2² bit is 1 → multiply by a^(4)
+              - The 2³ bit is 1 → multiply by a^(8)
+
+            Overall, result becomes a^8 × a^4 × a^1, which equals a^13.
+
+
+3. Squaring the Base Each Iteration
+
+    The process requires us to quickly compute higher powers of the base without multiplying repeatedly from scratch.
+
+    Initially, the base is a (i.e. a^1).
+        When we square the base, we get a^(1×2) = a^2.
+        Square it again to get (a^2)^2 = a^4.
+        Square a^4 to get a^8, and so on.
+        This squaring corresponds to moving to the next bit (or power of 2) in the exponent’s binary representation.
+
+
+    At each iteration:   
+    - We square the current base (and take modulo mod to keep the number small).
+    - This prepares us for the next bit of the exponent.
+
+    Example: For a = 3 and exponent = 5:   
+        - Write 5 in binary: 101.
+
+        - Initially: base = 3 (which is 3^1) and result = 1.   
+            - Process the least significant bit (rightmost):    
+            — Bit is 1 → update result = result × base = 1 × 3 = 3.   
+            - Square the base: 3^2 = 9.
+      - Halve the exponent (drop the rightmost bit): exponent becomes 2 (binary 10).   
+        - Process next bit (2 is 10; the rightmost bit is 0):    — Bit is 0 → do not update result.
+        - Square the base: 9^2 = 81.
+      - Halve the exponent: exponent becomes 1 (binary 1).   
+            - Process final bit:    — Bit is 1 → 
+        update result = 3 × 81 = 243.   
+    - Final result: 243, which equals 3^5.
+
+    This method drastically reduces the number of multiplications from the exponent’s size (which is slow for large exponents) to roughly 
+    log₂(exponent) steps.
+
+
+DRY RUN:
+Input: n = 3
+
+Step 1: Determine counts of even and odd positions.
+    - evenNo = (n + 1) / 2 = (3 + 1) / 2 = 2   (Even indices: 0 and 2)
+    - oddNo = n / 2 = 3 / 2 = 1                   (Odd index: 1)
+
+Step 2: Calculate combinations using power function.
+    a) Compute evenCombo = power(5, 2, 1000000007)
+       Initialization: result = 1, base = 5, exponent = 2
+       Iteration 1:
+           exponent = 2, which is even → result remains 1.
+           Square base: base = 5 * 5 = 25.
+           Halve exponent: exponent = 2 / 2 = 1.
+       Iteration 2:
+           exponent = 1, which is odd → result = (1 * 25) % mod = 25.
+           Square base: base = 25 * 25 = 625 (unused after this step).
+           Halve exponent: exponent = 1 / 2 = 0.
+       evenCombo = 25
+       
+    b) Compute oddCombo = power(4, 1, 1000000007)
+       Initialization: result = 1, base = 4, exponent = 1.
+       Iteration 1:
+           exponent = 1 is odd → result = (1 * 4) % mod = 4.
+           Square base: base = 4 * 4 = 16.
+           Halve exponent: exponent = 1 / 2 = 0.
+       oddCombo = 4
+
+Step 3: Final computation.
+    Final result = (evenCombo * oddCombo) % MOD = (25 * 4) % 1000000007 = 100
+
+Output: 100
