@@ -97,6 +97,7 @@
   - **[Problem: 1922 - Count Good Numbers(13/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1922.txt)**
   - **[Problem: 1534 - Count Good Triplets(14/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1534.txt)**
   - **[Problem: 2179 -Count Good Triplets in an Array (15/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2179.txt)**
+  - **[Problem: 2176 -Count Equal and Divisible Pairs in an Array (17/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2176.txt)**
 
 
 
