@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int countLargestGroup(int n) {
+        int i=1;
+        int maxCount=0;
+        int ans=0;
+        unordered_map <int,int> mp;
+        while(i <=n)
+        {
+            int sum=0;
+            int number=i;
+            while(number!=0)
+            {
+                
+                int rem=number%10;
+                sum+=rem;
+                number=number/10;
+            }
+            mp[sum]++;
+            maxCount=max(maxCount,mp[sum]);
+            i++;
+        }
+
+      for (auto& pair : mp) {
+            if (pair.second == maxCount) ans++;
+        }
+          return ans;
+    }
+  
+};
+
