@@ -1,0 +1,40 @@
+class Solution {
+public:
+    int countCompleteSubarrays(vector<int>& nums) {
+
+        int n=nums.size();
+
+        unordered_map <int,int> mp1;
+        unordered_map <int,int> mp2;
+
+        for(auto& num:nums)
+        {
+            mp1[num]++;
+        }
+
+        int left=0;
+        int right=0;
+        int count=0;
+
+        while(right<n)
+        {
+            mp2[nums[right]]++;
+
+            while(mp2.size()==mp1.size())
+            {
+                count+=n-right;
+                mp2[nums[left]]--;
+                if(mp2[nums[left]]==0)
+                {
+                    mp2.erase(nums[left]);
+                }
+                left++;
+            }
+            right++;
+            
+        }
+
+    
+    return count;    
+    }
+};
