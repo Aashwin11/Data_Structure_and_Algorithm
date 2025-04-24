@@ -104,6 +104,7 @@
   - **[Problem: 2145 - Count the Hidden Sequences (21/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2145.txt)**
   - **[Problem: 2338 - Count the Number of Ideal Arrays (22/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2338.txt)**
   - **[Problem: 1399 - Count Largest Group (23/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1399.txt)**
+  - **[Problem: 2799 - Count Complete Subarrays in an Array(24/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2799.txt)**
 
 
 
