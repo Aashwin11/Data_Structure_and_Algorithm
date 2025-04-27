@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int countSubarrays(vector<int>& nums) {
+        int n=nums.size();
+        int i=0;
+        int k=2;
+        int j;
+        int count=0;
+        while(k<n)
+        {
+            j=i+1;
+            if((nums[i]+ nums[k])*2 == nums[j])
+            {
+                count++;
+            }
+            i++;
+            k++;
+        }
+
+        return count;
+        
+    }
+};
