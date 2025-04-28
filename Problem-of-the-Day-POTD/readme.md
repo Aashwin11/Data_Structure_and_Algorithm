@@ -107,6 +107,7 @@
   - **[Problem: 2799 - Count Complete Subarrays in an Array(24/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2799.txt)**
   - **[Problem: 2444 - Count Subarrays With Fixed Bounds(26/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2444.txt)**
   - **[Problem: 3392 - Count Subarrays of Length Three With a Condition(27/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3392.txt)**
+  - **[Problem: 2302 - Count Subarrays With Score Less Than K(28/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2302.txt)**
 
 
 
