@@ -1,0 +1,36 @@
+class Solution {
+public:
+    long long countSubarrays(vector<int>& nums, int k) {
+        
+        int n=nums.size();
+        int max_num=0;
+        for(auto& num:nums)
+        {
+            max_num=max(max_num,num);
+        }
+
+        int left=0;
+        int right=0;
+        unordered_map<int,int> mp;
+        long long count=0;
+
+        while(right<n)
+        {
+            mp[nums[right]]++;
+
+            while(mp[max_num]>=k)
+            {
+                count+=n-right;
+                mp[nums[left]]--;
+                if(mp[nums[left]]==0)
+                {
+                    mp.erase(nums[left]);
+                }
+                left++;
+            }
+            right++;
+        }
+
+        return count;
+    }
+};
