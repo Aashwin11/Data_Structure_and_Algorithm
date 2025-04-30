@@ -1,0 +1,38 @@
+class Solution {
+public:
+    int findNumbers(vector<int>& nums) {
+
+        // int count=0;
+        // for(auto& num: nums)
+        // {
+        //     string num_str=to_string(num);
+        //     int size=num_str.size();
+        //     if(size%2==0)
+        //     {
+        //         count++;
+        //     }
+        // }
+        // return count;
+        
+
+        //Approach:2
+        int count=0;
+        for(auto&num: nums)
+        {
+            if(num>=10 &&num<100)
+            {
+                count++;
+
+            }
+            else if(num>=1000 && num<=9999)
+            {
+                count++;
+            }
+            else if(num==100000)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+};12
