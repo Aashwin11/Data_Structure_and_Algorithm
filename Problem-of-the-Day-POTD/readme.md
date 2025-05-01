@@ -109,10 +109,21 @@
   - **[Problem: 3392 - Count Subarrays of Length Three With a Condition(27/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3392.txt)**
   - **[Problem: 2302 - Count Subarrays With Score Less Than K(28/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2302.txt)**
   - **[Problem: 2962 - Count Subarrays Where Max Element Appears at Least K Times(29/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2962.txt)**
+  - **[Problem: 1295 - (30/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1295.txt)**
 
 
 
 </details>
+
+<details>
+  <summary><strong>May-2025</strong></summary>
+
+  - **[Problem: 2071(01/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2071.txt)**
+  - **[Problem: 684(29/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-684.txt)**
+  - **[Problem: 2483(30/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2493.txt)**
+  - **[Problem: 827(31/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-827.txt)**
+</details>
+
 
 
 ---
