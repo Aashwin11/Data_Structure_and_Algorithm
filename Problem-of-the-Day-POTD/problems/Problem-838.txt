@@ -1,0 +1,78 @@
+class Solution {
+public:
+    string pushDominoes(string dominos) {
+        int n=dominos.length();
+        vector<int> rightClosestL(n);
+        vector<int> leftClosestR(n); 
+
+        // Move from left to right to find the closest Right push i.e. leftCLosesetR
+        for(int i=0;i<n;i++)
+        {
+           if(dominos[i]=='R')
+           {
+            leftClosestR[i]=i; 
+           } 
+           else if(dominos[i]=='.')
+           {
+            leftClosestR[i]=i>0 ? leftClosestR[i-1] : -1;
+           }
+           else // means there will be L push- which hasno impact so -1
+           {
+            leftClosestR[i]=-1;
+           }
+
+        }
+
+         // Move from rigt to left to find the closest Left push i.e. rightClosestL
+        for(int i=n-1;i>=0;i--)
+        {
+           if(dominos[i]=='L')
+           {
+            rightClosestL[i]=i; 
+           } 
+           else if(dominos[i]=='.')
+           {
+            rightClosestL[i]=i<n-1 ? rightClosestL[i+1] : -1;
+           }
+           else // means there will be R push- which has no impact so -1
+           {
+            rightClosestL[i]=-1;
+           }
+
+        }
+
+        //find answer
+        string result(n,' '); // create a string of length N with character as space " "
+        for(int i=0;i<n;i++)
+        {
+            int distRightL=abs(i-rightClosestL[i]);  //on the right hand side of ith domino which is pushing to Left L
+            int distLeftR=abs(i-leftClosestR[i]);  //on the left hand side of ith domino which is pushing to Right R
+
+            //conditions
+            if(rightClosestL[i]==leftClosestR[i]) // both wll be -1
+            {
+                result[i]='.';
+
+            }
+            else if (leftClosestR[i]==-1)
+            {
+                 result[i]='L';
+            } 
+            else if (rightClosestL[i]==-1)
+            {
+                 result[i]='R';
+            }
+            else if (distLeftR==distRightL)
+            {
+                result[i]='.';
+
+            }
+            else
+            {
+                result[i]=distRightL < distLeftR ? 'L':'R';
+            }
+        }
+
+        return result;
+    }
+};
