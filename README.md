@@ -8,7 +8,7 @@
 - **[Topicwise Solutions](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/TopicWise_Solution/readme.md)**
 
 - **[Problem of the Day (POTD)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/readme.md)**
-- **[GFG Problem-of-the-Day (GFG-POTD)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/readme.md)**
+- **[GFG Problem-of-the-Day (GFG-POTD)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/tree/main/GFG-Problem-of-the-day/readme.md)**
 
 ---
 
