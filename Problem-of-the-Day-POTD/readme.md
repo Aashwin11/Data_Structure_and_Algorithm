@@ -120,7 +120,7 @@
 
   - **[Problem: 2071(01/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2071.txt)**
   - **[Problem: 838 - Push Dominoes(02/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-838.txt)**
-  - **[Problem: 2483(30/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2493.txt)**
+  - **[Problem: 1007 - Minimum Domino Rotations For Equal Row(03/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1007.txt)**
   - **[Problem: 827(31/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-827.txt)**
 </details>
 
