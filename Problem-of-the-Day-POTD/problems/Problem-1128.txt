@@ -1,0 +1,36 @@
+class Solution {
+public:
+    int numEquivDominoPairs(vector<vector<int>>& dominos) {
+        
+        unordered_map<string,int> mp;
+        int n=dominos.size();
+
+        for(int i=0;i<n;i++)
+        {
+            //normalizing
+            int u=min(dominos[i][0],dominos[i][1]);
+            int v=max(dominos[i][0],dominos[i][1]);
+
+            //inserting normalized vector to the map
+            string key=to_string(u)+','+to_string(v);
+            mp[key]++;
+        }
+
+        for(auto&m :mp)
+        {
+            cout<<"key:"<<m.first<<"Value:"<<m.second<<endl;
+        }
+
+        //Calculate the no of pairs possible to be formed using formula n*(n-1)/r , where r=2 , cause only 2 element are therr , since its a pair
+        int count=0;
+
+        for(auto&m :mp)
+        {
+            count+=(m.second*(m.second-1))/2;
+        }
+
+        return count;
+
+        
+    }
+};
