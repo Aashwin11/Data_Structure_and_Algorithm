@@ -1,0 +1,31 @@
+class Solution {
+  public:
+    vector<int> leftView(Node *root) {
+        vector<int> result;
+        if (root == NULL)
+            return result;
+        
+        queue<Node*> q;
+        q.push(root);
+        
+        while (!q.empty()) {
+            int levelSize = q.size();
+            
+            for (int i = 0; i < levelSize; i++) {
+                Node* current = q.front();
+                q.pop();
+                
+                // Store the first node of each level
+                if (i == 0)
+                    result.push_back(current->data);
+                
+                if (current->left)
+                    q.push(current->left);
+                if (current->right)
+                    q.push(current->right);
+            }
+        }
+        
+        return result;
+    }
+};
