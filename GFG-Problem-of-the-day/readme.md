@@ -8,6 +8,6 @@
 
   - **[Problem: Smallest distinct window (04/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problem-Smallest%20distinct%20window.txt)**
   - **[Problem: Search in an almost Sorted Array(05/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Search%20in%20an%20almost%20Sorted%20Array.txt)**
-  - **[Problem: 2483(30/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2493.txt)**
+  - **[Problem: Left View of Binary Tree.txt(06/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Left%20View%20of%20Binary%20Tree.txt)**
   - **[Problem: 827(31/01/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-827.txt)**
 </details>
