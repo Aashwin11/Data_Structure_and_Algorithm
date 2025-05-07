@@ -1,0 +1,20 @@
+void dfs(Node* root, vector<int>& path, vector<vector<int>>& result) {
+        if (root == nullptr) return;
+
+        path.push_back(root->data);
+
+        if (root->left == nullptr && root->right == nullptr) {
+            result.push_back(path);  // Add complete path to result
+        } else {
+            dfs(root->left, path, result);   // Explore left
+            dfs(root->right, path, result);  // Explore right
+        }
+
+        path.pop_back();  // Backtrack
+    }
+
+    vector<vector<int>> Paths(Node* root) {
+        vector<vector<int>> result;
+        vector<int> path;
+        dfs(root, path, result);
+        return result;
