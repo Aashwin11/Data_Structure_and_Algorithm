@@ -122,6 +122,8 @@
   - **[Problem: 838 - Push Dominoes(02/04/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-838.txt)**
   - **[Problem: 1007 - Minimum Domino Rotations For Equal Row(03/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1007.txt)**
   - **[Problem: 1920 - Build Array from Permutation(06/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1920.txt)**
+  - **[Problem: 3342 - Find Minimum Time to Reach Last Room II(08/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3342.txt)**
+
 </details>
 
 
