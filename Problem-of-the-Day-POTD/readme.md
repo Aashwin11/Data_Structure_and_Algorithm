@@ -124,6 +124,7 @@
   - **[Problem: 1920 - Build Array from Permutation(06/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1920.txt)**
   - **[Problem: 3342 - Find Minimum Time to Reach Last Room II(08/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3342.txt)**
   - **[Problem: 3342 - Count Number of Balanced Permutations(09/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3343.txt)**
+  - **[Problem: 1550 - Three Consecutive Odds(11/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1550.txt)**
 
 
 </details>
