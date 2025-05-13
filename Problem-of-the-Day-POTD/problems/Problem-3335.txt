@@ -1,0 +1,52 @@
+class Solution {
+
+public:
+
+    int lengthAfterTransformations(string s, int t) {
+        int MOD = 1e9 + 7;
+
+        // unordered_map<char,int> mp;
+        vector<int> mp(26,0);
+        
+        for(auto&ch:s)
+        {
+            mp[ch-'a']++;
+           
+        }
+
+        //transforming
+    
+        for(int i=1;i<=t;i++)
+        {
+            vector<int> temp(26,0);
+            for(int i=0;i<26;i++ )
+            {
+                char ch=i+'a';
+                int freq=mp[i];
+
+                if(ch!='z')
+                {
+                    temp[(ch+1)-'a']=(temp[(ch+1)-'a']+freq)%MOD;
+                }
+                else
+                {
+                    temp['a'-'a']=(temp['a'-'a']+freq)%MOD;
+                    temp['b'-'a']=(temp['b'-'a']+freq)%MOD;
+
+
+                }
+            }
+        mp=move(temp);// will move all the data of temp to mp and clear temp   
+        }
+      
+        int count=0;
+
+        for(int i=0;i<26;i++)
+        {
+            count=(count+mp[i])%MOD;
+        }
+
+        return (count)%MOD;
+        
+    }
+};
