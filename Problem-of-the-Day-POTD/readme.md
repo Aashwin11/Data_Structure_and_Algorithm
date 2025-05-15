@@ -127,6 +127,7 @@
   - **[Problem: 1550 - Three Consecutive Odds(11/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1550.txt)**
   - **[Problem: 2094 - Finding 3-Digit Even Numbers(12/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2094.txt)**
   - **[Problem: 3335 -⭐Total Characters in String After Transformations I(13/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3335.txt)**
+  - **[Problem: 2900 -Longest Unequal Adjacent Groups Subsequence I(15/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2900.txt)**
 
 
 </details>
