@@ -1,0 +1,74 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+
+class Solution {
+  public:
+    vector<int> findSmallestRange(vector<vector<int>>& arr) {
+        // code here
+         int k = arr.size();  
+    // Stores the current index for each list
+    vector<int> pointers(k, 0);
+    // Stores the current smallest range
+    vector<int> smallestRange = {0, INT_MAX};
+
+    while (true) {
+        int currentMin = INT_MAX, currentMax = INT_MIN;
+        int minListIndex = -1;
+
+        // Find the minimum and maximum among current elements of all lists
+        for (int i = 0; i < k; i++) {
+            int value = arr[i][pointers[i]];
+
+            if (value < currentMin) {
+                currentMin = value;
+                minListIndex = i;
+            }
+
+            if (value > currentMax) {
+                currentMax = value;
+            }
+        }
+
+        // Update the smallest range if this one is smaller
+        if (currentMax - currentMin < smallestRange[1] - smallestRange[0]) {
+            smallestRange[0] = currentMin;
+            smallestRange[1] = currentMax;
+        }
+
+        // Move the pointer in the list that had the minimum value
+        pointers[minListIndex]++;
+        // If that list is exhausted, break the loop
+        if (pointers[minListIndex] == arr[minListIndex].size()) break;
+    }
+
+    return smallestRange;
+    }
+};
+
+
+//{ Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        cin >> n >> k;
+        vector<vector<int>> arr(k, vector<int>(n));
+
+        for (int i = 0; i < k; i++)
+            for (int j = 0; j < n; j++)
+                cin >> arr[i][j];
+
+        Solution obj;
+        vector<int> range = obj.findSmallestRange(arr);
+        cout << range[0] << " " << range[1] << "\n";
+        cout << "~" << endl;
+    }
+    return 0;
+}
+
+// } Driver Code Ends
