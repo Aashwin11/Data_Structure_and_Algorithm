@@ -14,5 +14,5 @@
   - **[Problem: Largest number in K swaps (09/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Largest%20number%20in%20K%20swaps.txt)**
   - **[Problem:Meeting Rooms III ⭐(12/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Meeting%20Rooms%20III.txt)**
   - **[Problem:Substrings with same first and last characters(15/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Substrings%20with%20same%20first%20and%20last%20characters.txt)**
-
+ - **[Problem: Smallest range in K lists(16/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Probme-Smallest%20range%20in%20K%20lists.txt)**
 </details>
