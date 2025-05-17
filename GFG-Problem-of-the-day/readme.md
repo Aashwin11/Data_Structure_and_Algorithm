@@ -16,3 +16,5 @@
   - **[Problem:Substrings with same first and last characters(15/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Substrings%20with%20same%20first%20and%20last%20characters.txt)**
  - **[Problem: Smallest range in K lists(16/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Probme-Smallest%20range%20in%20K%20lists.txt)**
 </details>
+ - **[Problem: Sort the given array after applying the given equation (17/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Sort%20the%20given%20array%20after%20applying%20the%20given%20equation.txt)**
+</details>
