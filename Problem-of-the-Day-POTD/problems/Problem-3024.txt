@@ -1,0 +1,34 @@
+class Solution {
+public:
+    string triangleType(vector<int>& nums) {
+
+        int i=nums[0];
+        int j=nums[1];
+        int k=nums[2];
+
+        if(i==j && j==k && i==k) return "equilateral";
+        if(i==j || i==k || j==k)
+        { 
+        if(i+j>k)
+            {
+                if(i+k>j)
+                {
+                    if(j+k>i) return "isosceles";
+                }
+            }
+        }
+
+        if(i!=j && j!=k && k!=i)
+        {
+            if(i+j>k)
+            {
+                if(i+k>j)
+                {
+                    if(j+k>i) return "scalene";
+                }
+            }
+        } 
+
+    return "none"; 
+    }
+};
