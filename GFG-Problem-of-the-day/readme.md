@@ -17,6 +17,8 @@
  - **[Problem: Smallest range in K lists(16/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Probme-Smallest%20range%20in%20K%20lists.txt)**
  - **[Problem: Sort the given array after applying the given equation (17/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Sort%20the%20given%20array%20after%20applying%20the%20given%20equation.txt)**
  - **[Problem: Predecessor and Successor (19/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Predecessor%20and%20Successor.txt)**
+- **[Problem: Burning Tree (20/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/GFG-Problem-of-the-day/Problems/Problem-Burning%20Tree.txt)**  
+  ![HARD](https://img.shields.io/badge/Difficulty-HARD-red?style=for-the-badge)
 </details>
 
 </details>
