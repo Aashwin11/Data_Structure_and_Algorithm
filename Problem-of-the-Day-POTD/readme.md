@@ -132,6 +132,7 @@
   - **[Problem: 75. Sort Colors (17/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-75.txt)**
   - **[Problem: 1931 - Painting a Grid With Three Different Colors(18/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-1931.txt)**
   - **[Problem: 3024 - Type of Triangle(19/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3024.txt)**
+  - **[Problem:🟨MEDIUM - 3355- Zero Array Transformation I (20/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3355.txt)**
 
 
 </details>
