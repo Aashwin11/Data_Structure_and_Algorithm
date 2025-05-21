@@ -1,0 +1,59 @@
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        // Handle edge case: empty matrix
+        if(matrix.empty() || matrix[0].empty()) return;
+
+        int rowImpact = 0;
+        int columnImpact = 0;
+
+        // Check first row for any zeros
+        for(int col = 0; col < matrix[0].size(); col++) {
+            if(matrix[0][col] == 0) {
+                rowImpact = 1;
+                break;
+            }
+        }
+
+        // Check first column for any zeros
+        for(int row = 0; row < matrix.size(); row++) {
+            if(matrix[row][0] == 0) {
+                columnImpact = 1;
+                break;
+            }
+        }
+
+        // Use first row and column as markers
+        for(int i = 1; i < matrix.size(); i++) {
+            for(int j = 1; j < matrix[0].size(); j++) {
+                if(matrix[i][j] == 0) {
+                    matrix[i][0] = 0; // Mark the row
+                    matrix[0][j] = 0; // Mark the column
+                }
+            }
+        }
+
+        // Zero out cells based on markers (excluding first row and column)
+        for(int i = 1; i < matrix.size(); i++) {
+            for(int j = 1; j < matrix[0].size(); j++) {
+                if(matrix[i][0] == 0 || matrix[0][j] == 0) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        // Zero out the first row if needed
+        if(rowImpact) {
+            for(int col = 0; col < matrix[0].size(); col++) {
+                matrix[0][col] = 0; // Fixed: Use assignment
+            }
+        }
+
+        // Zero out the first column if needed
+        if(columnImpact) {
+            for(int row = 0; row < matrix.size(); row++) {
+                matrix[row][0] = 0; // Fixed: Use assignment
+            }
+        }
+    }
+};
