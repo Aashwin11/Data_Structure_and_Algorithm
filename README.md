@@ -1,4 +1,4 @@
-# Data_Structure_and_Algorithm
+#   Data_Structure_and_Algorithm
 
 <p align="center">Turning up my hardworking and dedication as a small resource for the visitors.
 </p>
