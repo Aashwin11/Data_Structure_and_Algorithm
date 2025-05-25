@@ -135,6 +135,7 @@
   - **[Problem:🟨MEDIUM - 3355- Zero Array Transformation I (20/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-3355.txt)**
   - **[Problem:🟨MEDIUM - 73- Set Matrix to Zero (21/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-73.txt)**
   - **[Problem:🟩 EASY- 2942- Find Words Containing Character (24/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2942.txt)**
+  - **[Problem:🟨MEDIUM - 2131 - Longest Palindrome by Concatenating Two Letter Words (25/05/25)](https://github.com/Aashwin11/Data_Structure_and_Algorithm/blob/main/Problem-of-the-Day-POTD/problems/Problem-2131.txt)**
 
 
 </details>
