@@ -1,0 +1,39 @@
+class Solution {
+
+      vector<int> shortestPaths(vector<int>& edges, int src) {
+        int n = edges.size();
+        vector<int> dist(n, INT_MAX);
+        dist[src] = 0;
+        queue<pair<int, int>> q;
+        q.push({src, 0});
+        while (!q.empty()) {
+            auto [node, d] = q.front(); q.pop();
+            if (edges[node] != -1 && dist[edges[node]] > d + 1) {
+                dist[edges[node]] = d + 1;
+                q.push({edges[node], dist[edges[node]]});
+            }
+        }
+        return dist;
+    }
+public:
+    int closestMeetingNode(vector<int>& edges, int node1, int node2) {
+        
+         vector<int> Spath1 = shortestPaths(edges, node1);
+        vector<int> Spath2 = shortestPaths(edges, node2);
+
+        int ansNode = -1;
+        int preMax = INT_MAX;
+
+        for (int i = 0; i < edges.size(); ++i) {
+            if (Spath1[i] != INT_MAX && Spath2[i] != INT_MAX) {
+                int pMax = max(Spath1[i], Spath2[i]);
+                if (pMax < preMax) {
+                    preMax = pMax;
+                    ansNode = i;
+                }
+            }
+        }
+
+        return ansNode;
+    }
+};
