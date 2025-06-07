@@ -1,0 +1,43 @@
+class Solution {
+public:
+    static string clearStars(string& s) {
+        const int n = s.size();
+        array<vector<int>, 26> alphabet;
+        int n0 = 0;
+        unsigned hasX = 0;
+        for (int i = 0; i < n; i++) {
+            const char c = s[i], x = c - 'a';
+            if (c != '*') {
+                alphabet[x].push_back(n0);
+                hasX |= (1 << x);
+                s[n0++] = c;
+            } 
+            else {
+                const int x = countr_zero(hasX); // find the min letter
+                if (!alphabet[x].empty()) {
+                    const int k = alphabet[x].back();
+                    alphabet[x].pop_back();
+                    if (alphabet[x].empty())
+                        hasX &= ~(1 << x); // remove x from bitmask
+                    s[k] = ' ';
+                }
+            }
+        }
+        int j = 0;
+        for (int i = 0; i < n0; i++) {
+            char c = s[i];
+            if (c >= 'a')
+                s[j++] = c;
+        }
+        s.resize(j);
+        return s;
+    }
+};
+
+
+auto init = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 'c';
+}();
