@@ -1,0 +1,55 @@
+class Solution {
+public:
+    int mostBooked(int n, vector<vector<int>>& meet) {
+        sort(begin(meet), end(meet));
+
+        // min heaps
+        priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<>> in_use;
+        priority_queue<int,vector<int>,greater<>> available;
+
+        // how many times a room is used
+        vector<int> cnt(n,0);
+
+        for(int room=0;room<n;room++){
+            available.push(room);
+        }
+
+        for(int i=0;i<meet.size();i++){
+            int st=meet[i][0], end=meet[i][1];
+            int duration = end-st;
+
+            while(!in_use.empty() and in_use.top().first <= st){
+                auto [free_on, room] = in_use.top();
+                in_use.pop();
+
+                available.push(room);
+            }
+
+            if(available.empty()){
+                auto [free_on, room] = in_use.top();
+                in_use.pop();
+                
+                in_use.push({free_on + duration, room});
+                
+                cnt[room]++;
+            }
+            else{
+                auto room = available.top();
+                available.pop();
+
+                in_use.push({end, room});
+                
+                cnt[room]++;
+            }
+        }
+
+        int mx = 0, ans_room = -1;
+        for(int i=0;i<n;i++){
+            if(cnt[i] > mx){
+                mx = cnt[i];
+                ans_room = i;
+            }
+        }
+        return ans_room;
+    }
+};
