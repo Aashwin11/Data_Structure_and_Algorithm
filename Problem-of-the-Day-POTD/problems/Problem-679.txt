@@ -1,0 +1,70 @@
+
+class Solution {
+public:
+    double value(double n1, char op, double n2){
+        double ans = n1;
+        if(op=='+') ans+=(double)n2;
+        if(op=='-') ans-=(double)n2;
+        if(op=='*') ans*=(double)n2;
+        if(op=='/'){
+            if(fabs(n2)<1e-6) return 1e9;
+            ans/=(double)n2;
+        }
+        return ans;
+    }
+    bool isValid(double ans){
+        return fabs(ans-24.0) < 1e-6;
+    }
+
+    bool evaluate(char op1, char op2, char op3, vector<int>& cards){
+        double ans;
+        //paranthesis at first 
+        //then with third.  ((_ _)_)_
+
+        ans = value(value(value(cards[0],op1,cards[1]), op2, cards[2]), op3, cards[3]);
+        if(isValid(ans)) return true;
+
+        //then evaluate last two and do final evalution (_ _) (_ _)
+
+        ans = value( value(cards[0],op1,cards[1]), op2, value(cards[2], op3, cards[3]) );
+        if(isValid(ans)) return true;
+
+        //***************
+
+        //paranthesis at middle
+        //go left then do...  (_(_ _))_
+        ans =   value( value(cards[0], op1, value(cards[1],op2,cards[2])), op3, cards[3]);
+        if(isValid(ans)) return true;
+
+
+        //go right then do...  _(_(_ _))
+        ans =   value(cards[0], op1, value( value(cards[1],op2,cards[2]) , op3, cards[3]));
+        if(isValid(ans)) return true;
+
+        //**************
+        //paranthesis at last
+        //do with 2nd   _(_(_ _))
+        ans = value(cards[0], op1, value(cards[1], op2, value(cards[2], op3, cards[3])));
+        if(isValid(ans)) return true;
+
+        return false;
+    }
+
+    bool judgePoint24(vector<int>& cards) {
+        vector<char> ops={'+' ,'-', '*', '/'};
+        sort(cards.begin(), cards.end());
+        do{
+            for(int op1=0;op1<4;op1++){
+                for(int op2=0;op2<4;op2++){
+                    for(int op3=0;op3<4;op3++){
+                        if(evaluate(ops[op1],ops[op2],ops[op3],cards)){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        while(next_permutation(cards.begin() ,cards.end())) ;
+        return false;   
+    }
+};
