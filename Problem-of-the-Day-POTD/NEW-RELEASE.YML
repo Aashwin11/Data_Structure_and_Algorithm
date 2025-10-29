@@ -4,7 +4,7 @@ zvsdbd WRITING SHORTLYS
 -  name: DSA
     job: Working yaml
         - steps: SIGNING
-        RUN :|cecr d 
+        RUN :|cecr d vg   zzz
                 echo
 vyyctctxffcrvr ww  
 Trying povet 
